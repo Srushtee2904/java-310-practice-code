@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+class Student {
+
+    String name;
+
+    int registrationNo;
+
+    public void show() {
+
+        System.out.println(name + "," + registrationNo);
+
+    }
+
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        int choice = input.nextInt();
+
+        if (choice == 1) {
+
+            String name = input.next();
+
+            int registrationNo = input.nextInt();
+
+            while (registrationNo <= 0) {
+
+                System.out.println("Please enter a positive registration number.");
+
+                registrationNo = input.nextInt();
+
+            }
+
+            Student student = new Student();
+
+            student.name = name;
+
+            student.registrationNo = registrationNo;
+
+            student.show();
+
+        } else if (choice == 2) {
+
+            Student student = new Student();
+
+            student.show();
+
+        } else {
+
+            System.out.println("Wrong Choice");
+
+        }
+
+        input.close();
+
+    }
+
+}
