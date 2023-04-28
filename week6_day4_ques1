@@ -1,0 +1,83 @@
+import java.io.*;
+
+import java.util.*;
+
+import java.text.*;
+
+import java.math.*;
+
+import java.util.regex.*;
+
+public class Solution {
+
+public double[] average_marks(double [][] marks)
+
+{
+
+double b[]=new double[marks.length];
+
+for(int i=0;i<marks.length;i++)
+
+{
+
+    double less=marks[i][0];
+
+    for(int j=0;j<marks[i].length;j++)
+
+    {
+
+        b[i]=b[i]+marks[i][j];
+
+        if(marks[i][j]<less)
+
+            less=marks[i][j];
+
+    }
+
+    b[i]=(b[i]-less)/2;
+
+}
+
+return b;
+
+}
+
+    public static void main(String[] args)
+
+    {
+
+        Solution sc=new Solution();
+
+Scanner obj =new Scanner(System.in);
+
+int n=obj.nextInt();
+
+double a[][]=new double[n][3];
+
+for(int i=0;i<n;i++)
+
+{
+
+    for(int j=0;j<3;j++)
+
+    {
+
+    a[i][j]=obj.nextDouble();
+
+    }
+
+}
+
+        double s[]=sc.average_marks(a);
+
+            for(int i=0;i<s.length;i++)
+
+            {
+
+            System.out.print(s[i]+" ");
+
+            }
+
+}
+
+}
