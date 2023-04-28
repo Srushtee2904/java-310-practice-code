@@ -1,0 +1,34 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class solution {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+int n = scanner.nextInt();
+if (n <= 0)
+{
+System.out.println("Invalid");
+}
+else {
+String[] arr = new String[n];
+for (int i = 0; i < n; i++)
+{
+arr[i] = scanner.next();
+}
+int alphaCount = 0;
+int intCount = 0;
+for (String elem : arr) {
+if (elem.matches("[a-zA-Z]+")) {
+alphaCount++;
+} else if (elem.matches("[0-9]+")) {
+intCount++;
+}
+}
+System.out.println(intCount);
+System.out.println(alphaCount);
+}
+}
+}
